@@ -37,15 +37,15 @@
 
 **⚠️ 关键**: 在此阶段完成之前，不能开始任何用户故事工作
 
-- [ ] T011 [P] 在 src/types/slide.ts 中创建 TypeScript 类型 (Slide、NavigationDirection、TouchState、SlideContent、LoadingState、SlideContainerProps 等)
-- [ ] T012 [P] 在 src/types/slide.ts 中创建常量 (SLIDE_COUNT=10、SWIPE_THRESHOLD=50、ANIMATION_CONFIG、STAGGER_DELAY=0.15)
-- [ ] T013 在 src/services/contentLoader.ts 中创建内容加载服务，使用 Vite import.meta.glob 加载 markdown 文件
-- [ ] T014 [P] 在 src/components/ui/GlassCard.tsx 中创建毛玻璃卡片组件，使用 backdrop-filter blur
-- [ ] T015 [P] 在 src/components/ui/GlowBackground.tsx 中创建光晕背景组件，使用 blur filter
-- [ ] T016 在 src/components/Loading/LoadingSpinner.tsx 中创建加载动画组件，使用 Lucide Loader2 图标
-- [ ] T017 在 App.tsx 中使用 LoadingState 类型创建加载状态管理
-- [ ] T018 在 tests/unit/contentLoader.test.ts 中编写 contentLoader 单元测试
-- [ ] T019 在 tests/component/GlassCard.test.tsx 中编写 GlassCard 组件测试
+- [X] T011 [P] 在 src/types/slide.ts 中创建 TypeScript 类型 (Slide、NavigationDirection、TouchState、SlideContent、LoadingState、SlideContainerProps 等)
+- [X] T012 [P] 在 src/types/slide.ts 中创建常量 (SLIDE_COUNT=10、SWIPE_THRESHOLD=50、ANIMATION_CONFIG、STAGGER_DELAY=0.15)
+- [X] T013 在 src/services/contentLoader.ts 中创建内容加载服务，使用 Vite import.meta.glob 加载 markdown 文件
+- [X] T014 [P] 在 src/components/ui/GlassCard.tsx 中创建毛玻璃卡片组件，使用 backdrop-filter blur
+- [X] T015 [P] 在 src/components/ui/GlowBackground.tsx 中创建光晕背景组件，使用 blur filter
+- [X] T016 在 src/components/Loading/LoadingSpinner.tsx 中创建加载动画组件，使用 Lucide Loader2 图标
+- [X] T017 在 App.tsx 中使用 LoadingState 类型创建加载状态管理
+- [X] T018 在 tests/unit/contentLoader.test.ts 中编写 contentLoader 单元测试
+- [X] T019 在 tests/component/GlassCard.test.tsx 中编写 GlassCard 组件测试
 
 **检查点**: 基础准备就绪 - 用户故事可以并行开始实现
 
