@@ -18,16 +18,16 @@
 
 **目的**: 项目初始化和基本结构
 
-- [ ] T001 使用命令创建 Vite + React + TypeScript 项目: `npm create vite@latest . -- --template react-ts`
-- [ ] T002 [P] 安装依赖: `npm install framer-motion lucide-react tailwindcss @tailwindcss/vite`
-- [ ] T003 [P] 安装开发依赖: `npm install -D vitest @testing-library/react @testing-library/user-event jsdom`
-- [ ] T004 在 vite.config.ts 中配置 Tailwind CSS v4，使用 @tailwindcss/vite 插件
-- [ ] T005 [P] 在 src/styles/globals.css 中创建全局 CSS 变量 (--primary-*、--accent-*、--text-*、--bg-*)
-- [ ] T006 在 src/styles/globals.css 中使用 linear-gradient 创建网格背景图案
-- [ ] T007 在 vite.config.ts 和 tsconfig.json 中配置 vitest
-- [ ] T008 [P] 创建目录结构: src/components/、src/hooks/、src/pages/、src/services/、src/types/、src/styles/、tests/
-- [ ] T009 创建 src/main.tsx 作为 React DOM 入口点
-- [ ] T010 创建 src/App.tsx 作为主应用组件
+- [X] T001 使用命令创建 Vite + React + TypeScript 项目: `npm create vite@latest . -- --template react-ts`
+- [X] T002 [P] 安装依赖: `npm install framer-motion lucide-react tailwindcss @tailwindcss/vite`
+- [X] T003 [P] 安装开发依赖: `npm install -D vitest @testing-library/react @testing-library/user-event jsdom`
+- [X] T004 在 vite.config.ts 中配置 Tailwind CSS v4，使用 @tailwindcss/vite 插件
+- [X] T005 [P] 在 src/styles/globals.css 中创建全局 CSS 变量 (--primary-*、--accent-*、--text-*、--bg-*)
+- [X] T006 在 src/styles/globals.css 中使用 linear-gradient 创建网格背景图案
+- [X] T007 在 vite.config.ts 和 tsconfig.json 中配置 vitest
+- [X] T008 [P] 创建目录结构: src/components/、src/hooks/、src/pages/、src/services/、src/types/、src/styles/、tests/
+- [X] T009 创建 src/main.tsx 作为 React DOM 入口点
+- [X] T010 创建 src/App.tsx 作为主应用组件
 
 ---
 

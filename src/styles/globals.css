@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+:root {
+  /* 主色 */
+  --primary-100: #019b98;
+  --primary-200: #55ccc9;
+  --primary-300: #c1ffff;
+
+  /* 强调色 */
+  --accent-100: #dd0025;
+  --accent-200: #ffbfab;
+
+  /* 正文颜色 */
+  --text-100: #014e60;
+  --text-200: #3f7a8d;
+
+  /* 背景颜色 */
+  --bg-100: #fbfbfb;
+  --bg-200: #f1f1f1;
+  --bg-300: #c8c8c8;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--bg-100);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* 网格背景 */
+.grid-background {
+  background-image:
+    linear-gradient(to right, var(--bg-300) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--bg-300) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* 禁用选择 */
+.no-select {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* 全屏容器 */
+.fullscreen-container {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
