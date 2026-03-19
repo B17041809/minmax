@@ -3,8 +3,12 @@ import type { SlideProps } from '../../types/slide'
 import { containerVariants, itemVariants } from './slideVariants'
 import { GlowBackground } from '../ui/GlowBackground'
 import { GlassCard } from '../ui/GlassCard'
+import { ScrollContainer } from '../ui/ScrollContainer'
+import { useScrollContainer } from '../../hooks/useScrollContainer'
 
 export function Slide({ title, subtitle, content }: SlideProps) {
+  const { resetScroll } = useScrollContainer()
+
   return (
     <div
       className="h-full flex flex-col"
@@ -19,7 +23,7 @@ export function Slide({ title, subtitle, content }: SlideProps) {
       <GlowBackground position="bottom-right" color="var(--accent-200)" />
 
       {/* Content */}
-      <div className="flex-1 flex flex-col items-center justify-center gap-8 pb-8 relative z-10">
+      <ScrollContainer onScrollReset={resetScroll} className="flex-1 flex flex-col items-center pt-8 pb-8 relative z-10">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -51,7 +55,7 @@ export function Slide({ title, subtitle, content }: SlideProps) {
           </motion.div>
 
           {/* Content Card */}
-          {content && (
+          {content && content.trim() && (
             <motion.div variants={itemVariants} className="w-full">
               <GlassCard>
                 <div
@@ -66,17 +70,44 @@ export function Slide({ title, subtitle, content }: SlideProps) {
             </motion.div>
           )}
         </motion.div>
-      </div>
+      </ScrollContainer>
     </div>
   )
 }
 
 // Simple markdown-like formatting (for demo - in production use a proper parser)
 function formatContent(content: string): string {
-  return content
+  // First, extract and convert tables to HTML
+  let result = content
+
+  // Check if content is plain text (no markdown formatting)
+  const isPlainText = !content.includes('|') && !content.includes('#') && !content.includes('**')
+
+  // Match markdown tables
+  const tableRegex = /\|(.+)\|[\r\n]+\|[-\s|]+\|[\r\n]+((?:\|.+\|[\r\n]*)+)/g
+  result = result.replace(tableRegex, (_, headerRow, bodyRows) => {
+    const headers = headerRow.split('|').map((h: string) => h.trim()).filter(Boolean)
+    const rows = bodyRows.trim().split('\n').map((row: string) =>
+      row.split('|').map((cell: string) => cell.trim()).filter(Boolean)
+    )
+
+    const headerHtml = headers.map((h: string) => `<th style="padding: 0.75rem; text-align: left; border-bottom: 2px solid var(--primary-200);">${h}</th>`).join('')
+    const bodyHtml = rows.map((row: string[]) =>
+      `<tr>${row.map((cell: string) => `<td style="padding: 0.75rem; border-bottom: 1px solid var(--bg-200);">${cell}</td>`).join('')}</tr>`
+    ).join('')
+
+    return `<table style="width: 100%; border-collapse: collapse; margin: 1rem 0;"><thead><tr>${headerHtml}</tr></thead><tbody>${bodyHtml}</tbody></table>`
+  })
+
+  // Then process other markdown elements
+  return result
+    .replace(/\*\*(.+?)\*\*/g, '<strong style="font-weight: 700;">$1</strong>')
     .replace(/^# (.+)$/gm, '<h1 style="font-size: 2rem; font-weight: 600; margin-bottom: 1rem;">$1</h1>')
     .replace(/^## (.+)$/gm, '<h2 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 0.75rem;">$1</h2>')
     .replace(/^### (.+)$/gm, '<h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">$1</h3>')
     .replace(/\n\n/g, '</p><p style="margin-bottom: 1rem;">')
-    .replace(/^(.+)$/gm, '<p style="margin-bottom: 1rem;">$1</p>')
+    .replace(/^(.+)$/gm, isPlainText
+      ? '<p style="margin-bottom: 0; text-align: center; font-weight: 600; font-size: 1.25rem;">$1</p>'
+      : '<p style="margin-bottom: 1rem;">$1</p>'
+    )
 }
