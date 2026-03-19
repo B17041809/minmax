@@ -2,10 +2,14 @@ import { useState, useEffect } from 'react'
 import type { LoadingState, SlideContent } from './types/slide'
 import { loadAllSlides } from './services/contentLoader'
 import { LoadingSpinner } from './components/Loading/LoadingSpinner'
+import { SlideContainer } from './components/Slide/SlideContainer'
+import { Slide } from './components/Slide/Slide'
+import { useSlideNavigation } from './hooks/useSlideNavigation'
 
 function App() {
   const [loadingState, setLoadingState] = useState<LoadingState>({ status: 'idle' })
   const [slides, setSlides] = useState<SlideContent[]>([])
+  const { currentSlide, direction } = useSlideNavigation()
 
   useEffect(() => {
     setLoadingState({ status: 'loading' })
@@ -70,15 +74,16 @@ function App() {
         </div>
       )}
 
-      {loadingState.status === 'loaded' && (
-        <div style={{ color: 'var(--text-100)', padding: '20px' }}>
-          <h1>交互式提示词演示网站</h1>
-          <p>Phase 2 完成 - 基础组件就绪</p>
-          <p>已加载 {slides.length} 页幻灯片</p>
-        </div>
+      {loadingState.status === 'loaded' && slides.length > 0 && (
+        <SlideContainer currentSlide={currentSlide} direction={direction}>
+          <Slide
+            id={currentSlide}
+            title={slides[currentSlide - 1]?.title || '未知'}
+            content={slides[currentSlide - 1]?.markdown || ''}
+          />
+        </SlideContainer>
       )}
 
-      {/* TODO: Implement slide navigation (Phase 3) */}
       {/* TODO: Add navigation controls (Phase 4) */}
       {/* TODO: Add progress bar (Phase 6) */}
       {/* TODO: Add page indicator (Phase 6) */}

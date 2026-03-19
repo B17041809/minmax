@@ -69,6 +69,7 @@ export interface PageIndicatorProps {
 export interface GlassCardProps {
   children: React.ReactNode
   className?: string
+  style?: React.CSSProperties
 }
 
 export interface GlowBackgroundProps {

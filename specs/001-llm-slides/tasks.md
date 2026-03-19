@@ -61,20 +61,20 @@
 
 > **注意**: 先编写测试，确保测试失败后再实现功能**
 
-- [ ] T020 [P] 在 tests/integration/slideNavigation.test.tsx 中编写幻灯片导航集成测试
-- [ ] T021 [P] 在 tests/component/SlideContainer.test.tsx 中编写 SlideContainer 组件测试
+- [X] T020 [P] 在 tests/integration/slideNavigation.test.tsx 中编写幻灯片导航集成测试
+- [X] T021 [P] 在 tests/component/SlideContainer.test.tsx 中编写 SlideContainer 组件测试
 
 ### 用户故事 1 的实现
 
-- [ ] T022 [P] 在 src/hooks/useSlideNavigation.ts 中创建幻灯片导航 Hook
-- [ ] T023 [P] 在 src/components/Slide/SlideContainer.tsx 中创建幻灯片容器组件，使用 AnimatePresence
-- [ ] T024 [P] 在 src/components/Slide/Slide.tsx 中创建幻灯片组件，使用绝对定位
-- [ ] T025 在 src/components/Slide/slideVariants.ts 中创建幻灯片动画变体
-- [ ] T026 实现幻灯片方向管理（左右进入/退出动画）
-- [ ] T027 [P] 在 src/components/ui/TitleArea.tsx 中创建标题区域组件
-- [ ] T028 [P] 在 src/components/ui/ConclusionBanner.tsx 中创建结论横幅组件
-- [ ] T029 在 App.tsx 中集成 SlideContainer 和 useSlideNavigation
-- [ ] T030 测试所有 10 页幻灯片的切换动画
+- [X] T022 [P] 在 src/hooks/useSlideNavigation.ts 中创建幻灯片导航 Hook
+- [X] T023 [P] 在 src/components/Slide/SlideContainer.tsx 中创建幻灯片容器组件，使用 AnimatePresence
+- [X] T024 [P] 在 src/components/Slide/Slide.tsx 中创建幻灯片组件，使用绝对定位
+- [X] T025 在 src/components/Slide/slideVariants.ts 中创建幻灯片动画变体
+- [X] T026 实现幻灯片方向管理（左右进入/退出动画）
+- [X] T027 [P] 在 src/components/ui/TitleArea.tsx 中创建标题区域组件
+- [X] T028 [P] 在 src/components/ui/ConclusionBanner.tsx 中创建结论横幅组件
+- [X] T029 在 App.tsx 中集成 SlideContainer 和 useSlideNavigation
+- [X] T030 测试所有 10 页幻灯片的切换动画
 
 **检查点**: 此时，用户故事 1 应该可以完全独立运行和测试
 

@@ -1,6 +1,6 @@
 import type { GlassCardProps } from '../../types/slide'
 
-export function GlassCard({ children, className = '' }: GlassCardProps) {
+export function GlassCard({ children, className = '', style }: GlassCardProps) {
   return (
     <div
       className={`glass-card ${className}`}
@@ -12,6 +12,7 @@ export function GlassCard({ children, className = '' }: GlassCardProps) {
         borderRadius: '16px',
         padding: '24px',
         boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
+        ...style,
       }}
     >
       {children}
