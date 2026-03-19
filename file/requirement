@@ -1,0 +1,28 @@
+1、单网页web，只用于桌面，本地使用
+2、页面架构：
+顶部栏：展示标题 "Claude && 规范驱动开发（SDD）"，同时显示日期时间
+侧边栏：
+包含【LLM、Claude、SDD、spec-kit、openspec】四个核心模块，并细化各模块下的子菜单，增强内容丰富度。
+LLM下包括四个分支：
+1、chatgpt，用于介绍 openai 的模型，使用 /home/xk/code/SDD/codex/file/openai 文件内容
+2、claude，用于介绍 Anthropic 的模型，使用 /home/xk/code/SDD/codex/file/Anthropic 文件内容
+3、gemin，用于介绍 google 的模型，使用 /home/xk/code/SDD/codex/file/google 文件内容
+4、三个LLM对比，用于对比三家模型，使用 /home/xk/code/SDD/codex/file/LLM_compare 文件内容
+
+Claude:
+展示内容，使用文件 /home/xk/code/SDD/codex/file/claude
+
+SDD：
+展示内容，使用文件 /home/xk/code/SDD/codex/file/SDD
+
+spec-kit:
+展示内容，使用文件 /home/xk/code/SDD/codex/file/spec-kit
+网页链接：https://github.com/sekmet/github-spec-kit/tree/main
+
+openspec:
+展示内容，使用文件 /home/xk/code/SDD/codex/file/openspec
+网页链接：https://github.com/Fission-AI/OpenSpec
+
+主内容区：根据侧边栏选择的模块和子菜单，动态展示相应内容。
+搜索区域：位于首位的现代搜索框，用于搜索当前页面信息
+视觉风格：极简主义风格。
