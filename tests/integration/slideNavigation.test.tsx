@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest'
+import { describe, it, expect, vi } from 'vitest'
 import { render, screen, fireEvent } from '@testing-library/react'
 import { useState } from 'react'
 import { SlideContainer } from '../../src/components/Slide/SlideContainer'
@@ -8,7 +8,7 @@ import type { NavigationDirection } from '../../src/types/slide'
 vi.mock('framer-motion', () => ({
   AnimatePresence: ({ children }: { children: React.ReactNode }) => children,
   motion: {
-    div: ({ children, ...props }: { children: React.ReactNode }) => children,
+    div: ({ children }: { children: React.ReactNode }) => children,
   },
 }))
 

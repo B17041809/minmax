@@ -30,6 +30,7 @@ function App() {
   useTouchNavigation(goNext, goPrevious)
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setLoadingState({ status: 'loading' })
 
     loadAllSlides()

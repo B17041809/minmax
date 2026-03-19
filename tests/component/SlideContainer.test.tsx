@@ -6,7 +6,7 @@ import { SlideContainer } from '../../src/components/Slide/SlideContainer'
 vi.mock('framer-motion', () => ({
   AnimatePresence: ({ children }: { children: React.ReactNode }) => children,
   motion: {
-    div: ({ children, ...props }: { children: React.ReactNode }) => children,
+    div: ({ children }: { children: React.ReactNode }) => children,
   },
 }))
 

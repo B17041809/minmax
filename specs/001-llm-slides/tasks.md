@@ -159,17 +159,17 @@
 
 ### 用户故事 5 的测试 ⚠️
 
-- [ ] T054 [P] 在 tests/integration/contentLoading.test.tsx 中编写内容加载集成测试
-- [ ] T055 [P] 在 tests/component/Slide.test.tsx 中编写带内容的 Slide 组件测试
+- [X] T054 [P] 在 tests/integration/contentLoading.test.tsx 中编写内容加载集成测试
+- [X] T055 [P] 在 tests/component/Slide.test.tsx 中编写带内容的 Slide 组件测试
 
 ### 用户故事 5 的实现
 
-- [ ] T056 [P] 创建 file/ 目录及占位 markdown 文件（openai.md、anthropic.md、google.md、llm_compare.md、claude.md、sdd.md、spec-kit.md、openspec.md）
-- [ ] T057 [P] 在 contentLoader.ts 中使用 import.meta.glob 实现内容加载
-- [ ] T058 [P] 在 Slide 组件中实现 markdown 渲染（使用 dangerouslySetInnerHTML 或 markdown 解析器）
-- [ ] T059 实现文件缺失时的占位内容显示（FR-021）
-- [ ] T060 在 App.tsx 中连接内容加载与幻灯片渲染
-- [ ] T061 测试所有 10 页正确显示内容
+- [X] T056 [P] 创建 file/ 目录及占位 markdown 文件（openai.md、anthropic.md、google.md、llm_compare.md、claude.md、sdd.md、spec-kit.md、openspec.md）
+- [X] T057 [P] 在 contentLoader.ts 中使用 import.meta.glob 实现内容加载
+- [X] T058 [P] 在 Slide 组件中实现 markdown 渲染（使用 dangerouslySetInnerHTML 或 markdown 解析器）
+- [X] T059 实现文件缺失时的占位内容显示（FR-021）
+- [X] T060 在 App.tsx 中连接内容加载与幻灯片渲染
+- [X] T061 测试所有 10 页正确显示内容
 
 **检查点**: 所有 10 页幻灯片正确显示内容
 
@@ -179,14 +179,14 @@
 
 **目的**: 影响多个用户故事的改进
 
-- [ ] T062 [P] 在所有动画中添加 prefers-reduced-motion 支持（FR-012）
-- [ ] T063 [P] 在初始内容加载期间添加加载动画（FR-022）
-- [ ] T064 [P] 使用中文更新 README.md，包含使用说明
-- [ ] T065 [P] 在 README 中添加键盘快捷键文档
-- [ ] T066 运行所有测试，确保 100% 通过率
-- [ ] T067 运行构建并验证生产包正常工作
-- [ ] T068 运行 npm run preview 并在浏览器中验证
-- [ ] T069 性能检查：验证 60fps 动画
+- [X] T062 [P] 在所有动画中添加 prefers-reduced-motion 支持（FR-012）
+- [X] T063 [P] 在初始内容加载期间添加加载动画（FR-022）
+- [X] T064 [P] 使用中文更新 README.md，包含使用说明
+- [X] T065 [P] 在 README 中添加键盘快捷键文档
+- [X] T066 运行所有测试，确保 100% 通过率
+- [X] T067 运行构建并验证生产包正常工作
+- [X] T068 运行 npm run preview 并在浏览器中验证
+- [X] T069 性能检查：验证 60fps 动画
 
 ---
 

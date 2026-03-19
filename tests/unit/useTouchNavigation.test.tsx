@@ -36,7 +36,9 @@ describe('useTouchNavigation', () => {
   beforeEach(() => {
     vi.clearAllMocks()
     // Make Touch and TouchEvent available globally for the test
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     ;(global as any).Touch = MockTouch
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     ;(global as any).TouchEvent = MockTouchEvent
   })
 
