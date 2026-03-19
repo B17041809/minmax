@@ -1,15 +1,33 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import type { LoadingState, SlideContent } from './types/slide'
 import { loadAllSlides } from './services/contentLoader'
 import { LoadingSpinner } from './components/Loading/LoadingSpinner'
 import { SlideContainer } from './components/Slide/SlideContainer'
 import { Slide } from './components/Slide/Slide'
+import { NavigationControls } from './components/Navigation/NavigationControls'
+import { ProgressBar } from './components/Progress/ProgressBar'
+import { PageIndicator } from './components/Progress/PageIndicator'
 import { useSlideNavigation } from './hooks/useSlideNavigation'
+import { useKeyboardNavigation } from './hooks/useKeyboardNavigation'
+import { useTouchNavigation } from './hooks/useTouchNavigation'
 
 function App() {
   const [loadingState, setLoadingState] = useState<LoadingState>({ status: 'idle' })
   const [slides, setSlides] = useState<SlideContent[]>([])
-  const { currentSlide, direction } = useSlideNavigation()
+  const containerRef = useRef<HTMLDivElement>(null)
+  const {
+    currentSlide,
+    direction,
+    goToSlide,
+    goNext,
+    goPrevious,
+  } = useSlideNavigation()
+
+  // 键盘导航
+  useKeyboardNavigation(goPrevious, goNext)
+
+  // 触控导航
+  useTouchNavigation(goNext, goPrevious)
 
   useEffect(() => {
     setLoadingState({ status: 'loading' })
@@ -25,7 +43,7 @@ function App() {
   }, [])
 
   return (
-    <div className="fullscreen-container">
+    <div ref={containerRef} className="fullscreen-container">
       <div className="grid-background" style={{ position: 'absolute', inset: 0 }} />
 
       {loadingState.status === 'loading' && (
@@ -75,18 +93,24 @@ function App() {
       )}
 
       {loadingState.status === 'loaded' && slides.length > 0 && (
-        <SlideContainer currentSlide={currentSlide} direction={direction}>
-          <Slide
-            id={currentSlide}
-            title={slides[currentSlide - 1]?.title || '未知'}
-            content={slides[currentSlide - 1]?.markdown || ''}
+        <>
+          <ProgressBar currentSlide={currentSlide} totalSlides={slides.length} />
+          <PageIndicator currentSlide={currentSlide} totalSlides={slides.length} />
+          <SlideContainer currentSlide={currentSlide} direction={direction}>
+            <Slide
+              title={slides[currentSlide - 1]?.title || '未知'}
+              content={slides[currentSlide - 1]?.markdown || ''}
+            />
+          </SlideContainer>
+          <NavigationControls
+            currentSlide={currentSlide}
+            totalSlides={slides.length}
+            onNavigate={goToSlide}
+            onPrevious={goPrevious}
+            onNext={goNext}
           />
-        </SlideContainer>
+        </>
       )}
-
-      {/* TODO: Add navigation controls (Phase 4) */}
-      {/* TODO: Add progress bar (Phase 6) */}
-      {/* TODO: Add page indicator (Phase 6) */}
     </div>
   )
 }

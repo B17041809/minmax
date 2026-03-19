@@ -88,20 +88,20 @@
 
 ### 用户故事 2 的测试 ⚠️
 
-- [ ] T031 [P] 在 tests/unit/useKeyboardNavigation.test.ts 中编写 useKeyboardNavigation 单元测试
-- [ ] T032 [P] 在 tests/unit/useTouchNavigation.test.ts 中编写 useTouchNavigation 单元测试
-- [ ] T033 [P] 在 tests/component/NavigationControls.test.tsx 中编写 NavigationControls 组件测试
+- [X] T031 [P] 在 tests/unit/useKeyboardNavigation.test.ts 中编写 useKeyboardNavigation 单元测试
+- [X] T032 [P] 在 tests/unit/useTouchNavigation.test.ts 中编写 useTouchNavigation 单元测试
+- [X] T033 [P] 在 tests/component/NavigationControls.test.tsx 中编写 NavigationControls 组件测试
 
 ### 用户故事 2 的实现
 
-- [ ] T034 [P] 在 src/hooks/useKeyboardNavigation.ts 中创建键盘导航 Hook（ArrowLeft、ArrowRight、Space）
-- [ ] T035 [P] 在 src/hooks/useTouchNavigation.ts 中创建触控导航 Hook（touchstart/touchmove/touchend，50px 阈值）
-- [ ] T036 [P] 在 src/components/Navigation/NavigationControls.tsx 中创建导航控制组件
-- [ ] T037 [P] 在 src/components/Navigation/ArrowButton.tsx 中创建箭头按钮组件，使用 Lucide ChevronLeft/ChevronRight
-- [ ] T038 [P] 在 src/components/Navigation/DotIndicator.tsx 中创建圆点指示器组件，支持高亮时拉长形状
-- [ ] T039 在 NavigationControls 中实现首页/末页箭头禁用逻辑
-- [ ] T040 在 App.tsx 中集成键盘和触控导航 Hook 与 useSlideNavigation
-- [ ] T041 测试三种导航方式均正常工作
+- [X] T034 [P] 在 src/hooks/useKeyboardNavigation.ts 中创建键盘导航 Hook（ArrowLeft、ArrowRight、Space）
+- [X] T035 [P] 在 src/hooks/useTouchNavigation.ts 中创建触控导航 Hook（touchstart/touchmove/touchend，50px 阈值）
+- [X] T036 [P] 在 src/components/Navigation/NavigationControls.tsx 中创建导航控制组件
+- [X] T037 [P] 在 src/components/Navigation/ArrowButton.tsx 中创建箭头按钮组件，使用 Lucide ChevronLeft/ChevronRight
+- [X] T038 [P] 在 src/components/Navigation/DotIndicator.tsx 中创建圆点指示器组件，支持高亮时拉长形状
+- [X] T039 在 NavigationControls 中实现首页/末页箭头禁用逻辑
+- [X] T040 在 App.tsx 中集成键盘和触控导航 Hook 与 useSlideNavigation
+- [X] T041 测试三种导航方式均正常工作
 
 **检查点**: 此时，用户故事 1 和 2 均应独立正常工作
 
@@ -115,15 +115,15 @@
 
 ### 用户故事 3 的测试 ⚠️
 
-- [ ] T042 [P] 在 tests/component/GlowBackground.test.tsx 中编写 GlowBackground 组件测试
+- [X] T042 [P] 在 tests/component/GlowBackground.test.tsx 中编写 GlowBackground 组件测试
 
 ### 用户故事 3 的实现
 
-- [ ] T043 [P] 在 Slide 组件中将 GlassCard 应用到所有内容卡片
-- [ ] T044 [P] 在 Slide 组件中添加 GlowBackground 装饰（绝对定位）
-- [ ] T045 验证网格背景在所有页面上正确显示
-- [ ] T046 在 Slide 组件中为幻灯片内容添加 staggerChildren 动画（0.15s 延迟）
-- [ ] T047 测试视觉效果在所有幻灯片上正确渲染
+- [X] T043 [P] 在 Slide 组件中将 GlassCard 应用到所有内容卡片
+- [X] T044 [P] 在 Slide 组件中添加 GlowBackground 装饰（绝对定位）
+- [X] T045 验证网格背景在所有页面上正确显示
+- [X] T046 在 Slide 组件中为幻灯片内容添加 staggerChildren 动画（0.15s 延迟）
+- [X] T047 测试视觉效果在所有幻灯片上正确渲染
 
 **检查点**: 所有幻灯片的视觉效果完成
 
@@ -137,15 +137,15 @@
 
 ### 用户故事 4 的测试 ⚠️
 
-- [ ] T048 [P] 在 tests/component/ProgressBar.test.tsx 中编写 ProgressBar 组件测试
-- [ ] T049 [P] 在 tests/component/PageIndicator.test.tsx 中编写 PageIndicator 组件测试
+- [X] T048 [P] 在 tests/component/ProgressBar.test.tsx 中编写 ProgressBar 组件测试
+- [X] T049 [P] 在 tests/component/PageIndicator.test.tsx 中编写 PageIndicator 组件测试
 
 ### 用户故事 4 的实现
 
-- [ ] T050 [P] 在 src/components/Progress/ProgressBar.tsx 中创建进度条组件（宽度 = currentSlide/totalSlides * 100%）
-- [ ] T051 [P] 在 src/components/Progress/PageIndicator.tsx 中创建页码显示组件（格式: "01 / 10"）
-- [ ] T052 在 App.tsx 中集成 ProgressBar 和 PageIndicator
-- [ ] T053 测试进度条宽度计算和页码格式
+- [X] T050 [P] 在 src/components/Progress/ProgressBar.tsx 中创建进度条组件（宽度 = currentSlide/totalSlides * 100%）
+- [X] T051 [P] 在 src/components/Progress/PageIndicator.tsx 中创建页码显示组件（格式: "01 / 10"）
+- [X] T052 在 App.tsx 中集成 ProgressBar 和 PageIndicator
+- [X] T053 测试进度条宽度计算和页码格式
 
 **检查点**: 所有进度指示器正常工作
 

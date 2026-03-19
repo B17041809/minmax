@@ -13,7 +13,8 @@ export function GlowBackground({
 }: GlowBackgroundProps) {
   return (
     <div
-      className="glow-background"
+      data-testid="glow-background"
+      className={`glow-background ${position}`}
       style={{
         position: 'absolute',
         width: '60vw',
