@@ -80,7 +80,7 @@ export interface LoadingSpinnerProps {
   message?: string
 }
 
-export const SLIDE_COUNT = 10
+export const SLIDE_COUNT = 11
 export const SWIPE_THRESHOLD = 50
 export const ANIMATION_CONFIG = {
   stiffness: 300,

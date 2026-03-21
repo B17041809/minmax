@@ -101,10 +101,12 @@ function formatContent(content: string): string {
 
   // Then process other markdown elements
   return result
+    .replace(/&/g, '&amp;')
     .replace(/\*\*(.+?)\*\*/g, '<strong style="font-weight: 700;">$1</strong>')
     .replace(/^# (.+)$/gm, '<h1 style="font-size: 2rem; font-weight: 600; margin-bottom: 1rem;">$1</h1>')
     .replace(/^## (.+)$/gm, '<h2 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 0.75rem;">$1</h2>')
     .replace(/^### (.+)$/gm, '<h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">$1</h3>')
+    .replace(/!\[(.+?)\]\((.+?)\)/g, '<img src="$2" alt="$1" style="max-width: 100%; height: auto; border-radius: 8px; margin: 1rem 0;" />')
     .replace(/\n\n/g, '</p><p style="margin-bottom: 1rem;">')
     .replace(/^(.+)$/gm, isPlainText
       ? '<p style="margin-bottom: 0; text-align: center; font-weight: 600; font-size: 1.25rem;">$1</p>'

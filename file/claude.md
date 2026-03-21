@@ -26,11 +26,17 @@ claude login
 
 **MCP = Model Control Protocol**
 
-大白话：Claude 能安全操控你电脑的 "权限通道"
+统一的接入规范
 
 **Skills = 技能库**
 
-大白话：Claude 预先学会的 "专业能力包"
+专业能力包
+
+![alt text](/image.png)
+
+**Sub-agent = 子智能**
+
+子线程
 
 ## 4、最常用命令
 
@@ -39,14 +45,15 @@ claude login
 | `/help` | 查看所有命令 |
 | `/exit` | 退出 CLI |
 | `/clear` | 清空对话历史 |
-| `/files` | 查看当前目录所有文件 |
-| `/read 文件名` | 读取文件内容 |
-| `/write 文件名` | 写入/创建文件 |
-| `/edit 文件名` | 编辑文件 |
-| `/delete 文件名` | 删除文件 |
-| `/skills list` | 查看所有技能 |
-| `/skills enable 技能名` | 开启技能 |
-| `/skills disable 技能名` | 关闭技能 |
-| `/project init` | 初始化项目 |
-| `/project info` | 查看项目信息 |
-| `/ignore 文件` | 让 Claude 忽略某个文件 |
+| `/compact` | 压缩对话历史 |
+| `/cost` | 查看当前对话成本 |
+| `/logout` | 退出登录 |
+| `/model` | 查看当前模型 |
+| `/doctor` | 检测 Claude 状态 |
+
+
+## 5、Claude.md
+1. 核心作用：打破“健忘症”
+2. 文件详解
+
+> 目的： 当你开启一个新的对话 Session 时，Agent 会先读这个文件，从而无缝衔接上一次的工作进度。

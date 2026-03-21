@@ -51,6 +51,7 @@ export async function loadAllSlides(): Promise<SlideContent[]> {
     'anthropic',
     'google',
     'llm_compare',
+    'chinese_llm',
     'claude',
     'sdd',
     'spec-kit',
@@ -61,7 +62,7 @@ export async function loadAllSlides(): Promise<SlideContent[]> {
 
   // First slide is always the intro
   slides.push({
-    title: '三大国外LLM',
+    title: 'LLM && SDD',
     markdown: '主讲人：陈晨 时间：2026-03-24',
     isPlaceholder: false,
   })
