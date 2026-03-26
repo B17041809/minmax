@@ -53,6 +53,7 @@ export async function loadAllSlides(): Promise<SlideContent[]> {
     'llm_compare',
     'chinese_llm',
     'claude',
+    'vibe_coding',
     'sdd',
     'spec-kit',
     'openspec',
@@ -62,7 +63,7 @@ export async function loadAllSlides(): Promise<SlideContent[]> {
 
   // First slide is always the intro
   slides.push({
-    title: 'LLM && SDD',
+    title: 'claude code && SDD',
     markdown: '主讲人：陈晨 时间：2026-03-24',
     isPlaceholder: false,
   })

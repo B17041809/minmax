@@ -31,8 +31,18 @@ vi.mock('../../src/services/contentLoader', () => ({
       isPlaceholder: false,
     },
     {
+      title: 'CHINESE_LLM',
+      markdown: '# 国内LLM\n\n国内大模型内容',
+      isPlaceholder: false,
+    },
+    {
       title: 'CLAUDE',
       markdown: '# Claude\n\nClaude content here',
+      isPlaceholder: false,
+    },
+    {
+      title: 'VIBE_CODING',
+      markdown: '# Vibe Coding\n\nVibe coding content here',
       isPlaceholder: false,
     },
     {
@@ -59,7 +69,7 @@ vi.mock('../../src/services/contentLoader', () => ({
 }))
 
 describe('Content Loading Integration', () => {
-  it('loads all 10 slides', async () => {
+  it('loads all 12 slides', async () => {
     const { default: App } = await import('../../src/App')
     render(<App />)
 
@@ -70,6 +80,6 @@ describe('Content Loading Integration', () => {
   it('displays slide content after loading', async () => {
     const { loadAllSlides } = await import('../../src/services/contentLoader')
     const slides = await loadAllSlides()
-    expect(slides.length).toBe(10)
+    expect(slides.length).toBe(12)
   })
 })

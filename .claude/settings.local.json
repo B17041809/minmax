@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(.specify/scripts/bash/create-new-feature.sh \"@提示词.md 这是我的要求\" --json --short-name \"llm-prompt-slides\")",
+      "Bash(chmod +x /home/xk/code/SDD/minmax/.specify/scripts/bash/create-new-feature.sh)",
+      "Bash(LC_ALL=C .specify/scripts/bash/setup-plan.sh --json 2>&1)",
+      "Bash(LC_ALL=C .specify/scripts/bash/check-prerequisites.sh --json 2>&1)",
+      "Bash(LC_ALL=C .specify/scripts/bash/check-prerequisites.sh --json --require-tasks --include-tasks 2>&1)",
+      "Bash(npm create:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(npm test:*)",
+      "Bash(.specify/scripts/bash/check-prerequisites.sh --json --require-tasks --include-tasks)",
+      "Bash(mv Anthropic.md anthropic.md)",
+      "Bash(mv LLM_compare.md llm_compare.md)",
+      "Bash(mv SDD.md sdd.md)",
+      "Bash(.specify/scripts/bash/create-new-feature.sh \"因为展示的内容过长，导致一个页面无法全部展示，添加上下拖动功能，使内容展示完全\" --json --short-name \"slide-scroll\" \"添加幻灯片垂直滚动功能\")",
+      "Bash(bash -c '.specify/scripts/bash/create-new-feature.sh \"因为展示的内容过长，导致一个页面无法全部展示，添加上下拖动功能，使内容展示完全\" --json --short-name \"slide-scroll\"' 2>&1)",
+      "Bash(.specify/scripts/bash/check-prerequisites.sh --json --paths-only 2>/dev/null)",
+      "Bash(.specify/scripts/bash/setup-plan.sh --json 2>/dev/null)",
+      "Bash(.specify/scripts/bash/update-agent-context.sh claude:*)",
+      "Bash(.specify/scripts/bash/check-prerequisites.sh --json 2>/dev/null)"
+    ]
+  }
+}
